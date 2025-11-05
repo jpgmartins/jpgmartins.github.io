@@ -4,44 +4,159 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <title>João Pedro Martins</title>
-
+    <meta name="description" content="João Pedro Martins - Ph.D. student in Government at Harvard University studying International Relations and Regional Governance">
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
     <meta name="viewport" content="width=device-width">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    <style>
+      .tabs {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 20px;
+        border-bottom: 2px solid #e0e0e0;
+        flex-wrap: wrap;
+      }
+      
+      .tab-button {
+        padding: 10px 20px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+        color: #666;
+        transition: all 0.3s;
+        border-bottom: 3px solid transparent;
+      }
+      
+      .tab-button:hover {
+        color: #333;
+        background: #f5f5f5;
+      }
+      
+      .tab-button.active {
+        color: #267CB9;
+        border-bottom: 3px solid #267CB9;
+        font-weight: bold;
+      }
+      
+      .tab-content {
+        display: none;
+        animation: fadeIn 0.3s;
+      }
+      
+      .tab-content.active {
+        display: block;
+      }
+      
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+    </style>
   </head>
   <body>
     <div class="wrapper">
       <header>
         <h1>João Pedro Martins</h1>
-         <img src="jpgm.PNG" alt="João Pedro Martins" style="width: 200px; border-radius: 50%; margin-bottom: 20px;">
+        <img src="jpgm.PNG" alt="João Pedro Martins" style="width: 200px; border-radius: 50%; margin-bottom: 20px;">
         <p>Ph.D. Student in Government</p>
         <p class="view">Harvard University</p>
         <p class="view">joaopedromartins@g.harvard.edu</p>
- <p class="view"><a href="cv_joaopedromartins.pdf">CV</a></p>
+        <p class="view"><a href="cv_joaopedromartins.pdf">CV</a></p>
       </header>
+      
       <section>
-        <h1>About</h1>
-
-        <p>I am a Ph.D. student in Government at Harvard University and a Karl W. Deutsch Fellow. My research focuses on International Relations and Quantitative Methods.</p>
-
-        <p>I received my B.A. in International Relations from the University of São Paulo (USP) in 2025.</p>
-
-        <h2>Research Interests</h2>
-
-        <p>My research examines international organizations, institutional design, and regional governance in Latin America.</p>
-
-        <h2>Contact</h2>
-
-        <p>Email: <a href="mailto:joaopedromartins@g.harvard.edu">joaopedromartins@g.harvard.edu</a></p>
-
+        <div class="tabs">
+          <button class="tab-button active" onclick="openTab(event, 'about')">About</button>
+          <button class="tab-button" onclick="openTab(event, 'publications')">Publications</button>
+          <button class="tab-button" onclick="openTab(event, 'teaching')">Teaching</button>
+          <button class="tab-button" onclick="openTab(event, 'miscellaneous')">Miscellaneous</button>
+        </div>
+        
+        <div id="about" class="tab-content active">
+          <h1>About</h1>
+          <p>I am a Ph.D. student in Government at Harvard University and a Karl W. Deutsch Fellow. My research focuses on International Relations and Quantitative Methods.</p>
+          <p>I received my B.A. in International Relations from the University of São Paulo (USP) in 2025.</p>
+          
+          <h2>Research Interests</h2>
+          <p>My research examines international organizations, institutional design, and regional governance in Latin America.</p>
+          
+          <h2>Contact</h2>
+          <p>Email: <a href="mailto:joaopedromartins@g.harvard.edu">joaopedromartins@g.harvard.edu</a></p>
+        </div>
+        
+        <div id="publications" class="tab-content">
+          <h1>Publications</h1>
+          
+          <h2>Working Papers</h2>
+          <p><em>Your working papers will appear here.</em></p>
+          <!-- Example format:
+          <p><strong>Paper Title</strong> (with Co-Author Name if applicable)<br>
+          Brief description of the paper.<br>
+          <a href="#">[PDF]</a> <a href="#">[Abstract]</a></p>
+          -->
+          
+          <h2>Publications</h2>
+          <p><em>Your publications will appear here.</em></p>
+          <!-- Example format:
+          <p><strong>Article Title</strong> (with Co-Author Name if applicable)<br>
+          <em>Journal Name</em>, Volume(Issue), Year.<br>
+          <a href="#">[PDF]</a> <a href="#">[Journal Link]</a></p>
+          -->
+          
+          <h2>Work in Progress</h2>
+          <p><em>Your projects in progress will appear here.</em></p>
+        </div>
+        
+        <div id="teaching" class="tab-content">
+          <h1>Teaching</h1>
+          
+          <h2>Harvard University</h2>
+          <p><em>Your teaching experience will appear here.</em></p>
+          <!-- Example format:
+          <p><strong>Course Name</strong> - Role (e.g., Teaching Fellow)<br>
+          Semester, Year | Instructor: Professor Name<br>
+          Brief description of responsibilities.</p>
+          -->
+        </div>
+        
+        <div id="miscellaneous" class="tab-content">
+          <h1>Miscellaneous</h1>
+          
+          <h2>Awards and Honors</h2>
+          <p>Karl W. Deutsch Fellow, Harvard University</p>
+          
+          <h2>Service</h2>
+          <p><em>Professional service activities will appear here.</em></p>
+          
+          <h2>Other</h2>
+          <p><em>Additional information, links, or interests will appear here.</em></p>
+        </div>
       </section>
+      
       <footer>
         <p><small>João Pedro Martins &mdash; Harvard University</small></p>
       </footer>
     </div>
+    
     <script src="javascripts/scale.fix.js"></script>
+    <script>
+      function openTab(evt, tabName) {
+        var i, tabContent, tabButtons;
+        
+        tabContent = document.getElementsByClassName("tab-content");
+        for (i = 0; i < tabContent.length; i++) {
+          tabContent[i].classList.remove("active");
+        }
+        
+        tabButtons = document.getElementsByClassName("tab-button");
+        for (i = 0; i < tabButtons.length; i++) {
+          tabButtons[i].classList.remove("active");
+        }
+        
+        document.getElementById(tabName).classList.add("active");
+        evt.currentTarget.classList.add("active");
+      }
+    </script>
   </body>
 </html>
